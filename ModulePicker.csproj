@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Version>1.0.0</Version>
+        <Authors>Durnehviir</Authors>
+        <NoWarn>
+            $(NoWarn);
+            CA1513;
+            CA1816;
+            IDE0016;
+            IDE0017;
+            IDE0018;
+            IDE0019;
+            IDE0028;
+            IDE0034;
+            IDE0039;
+            IDE0056;
+            IDE0057;
+            IDE0063;
+            IDE0066;
+            IDE0090;
+            IDE0180;
+            IDE0251;
+            IDE0270;
+            IDE0290;
+            IDE0301;
+            IDE0302;
+            IDE0305;
+            IDE0350;
+            IDE0360;
+            SYSLIB1045
+        </NoWarn>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <None Remove="Resources\Modules.json" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\Modules.json" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    </ItemGroup>
+    
+</Project>
