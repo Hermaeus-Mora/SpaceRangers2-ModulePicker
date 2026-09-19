@@ -410,9 +410,12 @@ namespace ModulePicker
             Type[] interfaces = type.GetInterfaces();
 
             // Целое число
-            if (interfaces.Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IBinaryInteger<>)) && comparer.Compare(modifier, @default) > 0)
+            if (interfaces.Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IBinaryInteger<>)))
             {
-                Console.Write($"+{modifier}");
+                int result = comparer.Compare(modifier, @default);
+                if (result > 0)
+                    Console.Write('+');
+                Console.Write(modifier);
                 goto Complete;
             }
 
